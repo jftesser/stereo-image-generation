@@ -8,6 +8,8 @@ This repository contains code to generate stereo (Side by side) image from a sin
 1) Download the model weights [model-f45da743.pt](https://drive.google.com/file/d/1l_w6Jny_erNQpgc8-nzBa_adh4bBDaFw/view?usp=sharing) and place the
 file in the root folder.
 
+![image](https://github.com/m5823779/Stereo-Side-by-Side-Image-Generator-from-Single-Image/blob/master/doc/Stereo_image_demo.gif)
+
 2) Set up dependencies: 
 
     ```shell
