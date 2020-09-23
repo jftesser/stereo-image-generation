@@ -2,7 +2,7 @@
 
 This repository contains code to generate stereo (Side by side) image from a single image.
                    
-		        Input(Left image)                         Output(Right image)                        3D effect     
+		    Input(Left image)                         Output(Right image)                              3D effect     
 ![image](https://github.com/m5823779/Stereo-Side-by-Side-Image-Generator-from-Single-Image/blob/master/doc/Stereo_image_demo.gif)
 
 ### Setup 
