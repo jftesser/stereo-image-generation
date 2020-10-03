@@ -8,10 +8,11 @@ Fig) Input image(Left) / Output(Middle) / 3D effect(Right)
 
 ### Introduce
 
-Have you ever wondered why people and many animals have two eyes? By using two eyes we can have a perception of depth. If you could have two pictures of your both eyes and you try to overlap these pictures you will see that there are big displacements in the nearest objects to your eyes while the displacements in the objects that are far away will be very small. These observed displacements are translated to the depth of the objects. 
-	
-	
+Have you ever wondered why people and many animals have two eyes? By using two eyes we can have a perception of depth. If you could have two pictures of your both eyes and you try to overlap these pictures you will see that there are big displacements in the nearest objects to your eyes while the displacements in the objects that are far away will be very small. These observed displacements are translated to the depth of the objects.
+
+
 So far, many deep learning algorithms have made a huge success in monocular depth estimation. Using a convolution neural network, we can predict the depth value of each pixel, given only a single RGB image as input. According to the previous introduction, for pixels with farther depth, we make a larger offset for the pixels corresponding to the original image. for pixels with closer depth, we make a smaller offset. Then using some image inpainting algorithms. So that we can get an image from different perspectives. Combine with the original input we can get a stereo image. Finally, through a special display, we can let this stereo (side by side) image produce a 3D effect.
+
 	
 ### Setup 
 
