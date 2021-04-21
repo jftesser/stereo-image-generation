@@ -12,7 +12,7 @@ So far, many deep learning algorithms have made a huge success in monocular dept
 
 ### Changelog
 
-* [Aug 2020] Release [C++](https://github.com/m5823779/Stereo-Side-by-Side-Image-Generator-from-Single-Image/blob/master/c++) and [cython](https://github.com/m5823779/Stereo-Side-by-Side-Image-Generator-from-Single-Image/blob/master/cython) version
+* [Aug 2020] Release [C++](https://github.com/m5823779/stereo_image_generator_from_single_image/tree/master/c%2B%2B) and [cython](https://github.com/m5823779/stereo_image_generator_from_single_image/tree/master/cython) version
 * [Aug 2020] Initial release of stereo image generation base on MiDaS v2.0
 
 ### Setup 
