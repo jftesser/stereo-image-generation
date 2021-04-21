@@ -1,4 +1,4 @@
-## Stereo (Side by Side) Image Generator from Single Image
+## Stereo (Side by Side) Image Generation from Single Image
 
 This repository contains code to generate stereo (Side by side) image from a single image.
                        
@@ -8,12 +8,13 @@ Fig) Input image(Left) / Output(Middle) / 3D effect(Right)
 
 ### Introduce
 
-Have you ever wondered why people and many animals have two eyes? By using two eyes we can have a perception of depth. If you could have two pictures of your both eyes and you try to overlap these pictures you will see that there are big displacements in the nearest objects to your eyes while the displacements in the objects that are far away will be very small. These observed displacements are translated to the depth of the objects.
+So far, many deep learning algorithms have made a huge success in monocular depth estimation. Using a convolution neural network, we can predict the depth value of each pixel, given only a single RGB image as input. For pixels with farther depth, we make a larger offset for the pixels corresponding to the original image. for pixels with closer depth, we make a smaller offset. Then using some image inpainting algorithms. So that we can get an image from different perspectives. Combine with the original input we can get a stereo image. Finally, through a special display, we can let this stereo (side by side) image produce a 3D effect.
 
+### Changelog
 
-So far, many deep learning algorithms have made a huge success in monocular depth estimation. Using a convolution neural network, we can predict the depth value of each pixel, given only a single RGB image as input. According to the previous introduction, for pixels with farther depth, we make a larger offset for the pixels corresponding to the original image. for pixels with closer depth, we make a smaller offset. Then using some image inpainting algorithms. So that we can get an image from different perspectives. Combine with the original input we can get a stereo image. Finally, through a special display, we can let this stereo (side by side) image produce a 3D effect.
+* [Aug 2020] Release [C++](https://github.com/m5823779/Stereo-Side-by-Side-Image-Generator-from-Single-Image/blob/master/c++) and [cython](https://github.com/m5823779/Stereo-Side-by-Side-Image-Generator-from-Single-Image/blob/master/cython) version
+* [Aug 2020] Initial release of stereo image generation base on MiDaS v2.0
 
-	
 ### Setup 
 
 1) Download the model weights [model-f45da743.pt](https://drive.google.com/file/d/1l_w6Jny_erNQpgc8-nzBa_adh4bBDaFw/view?usp=sharing) and place the
@@ -63,9 +64,6 @@ file in the root folder.
 3) The resulting depth maps are written to the `depth` folder.
 
 	The resulting stereo image are written to the `stereo` folder.
-
-
-
 
 ### Acknowledgments
 
