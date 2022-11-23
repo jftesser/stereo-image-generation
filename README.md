@@ -1,6 +1,6 @@
 ## Stereo (Side by Side) Image Generation from Single Image
 
-This repository contains code to generate stereo (Side by side) image from a single image.
+Utilizes AI to instantly fully convert 2D content into stereo 3D
                        
 ![image](https://github.com/m5823779/Stereo-Side-by-Side-Image-Generator-from-Single-Image/blob/master/doc/Stereo_image_demo.gif)
 
@@ -8,7 +8,7 @@ Fig) Input image(Left) / Output(Middle) / 3D effect(Right)
 
 ### Introduce
 
-So far, many deep learning algorithms have made a huge success in monocular depth estimation. Using a convolution neural network, we can predict the depth value of each pixel, given only a single RGB image as input. For pixels with farther depth, we make a larger offset for the pixels corresponding to the original image. for pixels with closer depth, we make a smaller offset. Then using some image inpainting algorithms. So that we can get an image from different perspectives. Combine with the original input we can get a stereo image. Finally, through a special display, we can let this stereo (side by side) image produce a 3D effect.
+With the rapid of autostereoscopic 3D monitors, through the specialized optical lens and eye-tracking technology delivers users have an entirely new stereoscopic 3D visualization experience. However, it only works with 3D content inputs (Stereoscopic Images). Such as side-by-side images. But most image or video on the internet is 2D single view content. Making the technology difficult to popularize. In order to solve this problem, this project utilizes "Deep Learning" and "Computer Vision" to enable conversion of 2D content into stereo 3D content.
 
 ### Changelog
 
