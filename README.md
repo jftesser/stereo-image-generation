@@ -1,3 +1,4 @@
+# DUPLICATE, ORIGINAL REPO WAS [HERE](https://github.com/m5823779/Stereo-Side-by-Side-Image-Generator-from-Single-Image/)
 ## Stereo (Side by Side) Image Generation from Single Image
 
 Utilizes AI to instantly fully convert 2D content into stereo 3D
@@ -17,7 +18,7 @@ With the rapid of autostereoscopic 3D monitors, through the specialized optical 
 
 ### Setup 
 
-1) Download the model weights [model-f45da743.pt](https://drive.google.com/file/d/1l_w6Jny_erNQpgc8-nzBa_adh4bBDaFw/view?usp=sharing) and place the
+1) Download the model weights [model-f45da743.pt](https://drive.google.com/file/d/1J6x7ea_lRd14A_dXD1lkHJujQDe7215e/view?usp=sharing) and place the
 file in the root folder.
 
 2) Set up dependencies: 

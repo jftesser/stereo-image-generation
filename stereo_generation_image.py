@@ -151,43 +151,46 @@ def run(model_path):
 
     for idx in tqdm(range(len(img_list))):
         sample = img_list[idx]
+        print('sample:', sample)
         left_img = cv2.imread(os.path.join(args.input, sample))
-        img = cv2.cvtColor(left_img, cv2.COLOR_BGR2RGB) / 255.0
+        print('left_img:', left_img)
+        if left_img is not None:
+            img = cv2.cvtColor(left_img, cv2.COLOR_BGR2RGB) / 255.0
 
-        #  Apply transforms
-        image = transform({"image": img})["image"]
+            #  Apply transforms
+            image = transform({"image": img})["image"]
 
-        #  Predict and resize to original resolution
-        with torch.no_grad():
-            image = torch.from_numpy(image).to(device).unsqueeze(0)
-            depth = model.forward(image)
+            #  Predict and resize to original resolution
+            with torch.no_grad():
+                image = torch.from_numpy(image).to(device).unsqueeze(0)
+                depth = model.forward(image)
 
-            depth = (
-                torch.nn.functional.interpolate(
-                    depth.unsqueeze(1),
-                    size=left_img.shape[:2],
-                    mode="bicubic",
-                    align_corners=False,
+                depth = (
+                    torch.nn.functional.interpolate(
+                        depth.unsqueeze(1),
+                        size=left_img.shape[:2],
+                        mode="bicubic",
+                        align_corners=False,
+                    )
+                    .squeeze()
+                    .cpu()
+                    .numpy()
                 )
-                .squeeze()
-                .cpu()
-                .numpy()
-            )
 
-        depth = cv2.blur(depth, (3, 3))
+            depth = cv2.blur(depth, (3, 3))
 
-        depth_map = write_depth(depth, bits=2, reverse=False)
-        right_img = generate_stereo(left_img, depth_map)
-        stereo = np.hstack([left_img, right_img])
-        anaglyph = overlap(left_img, right_img)
+            depth_map = write_depth(depth, bits=2, reverse=False)
+            right_img = generate_stereo(left_img, depth_map)
+            stereo = np.hstack([left_img, right_img])
+            anaglyph = overlap(left_img, right_img)
 
-        # cv2.imshow('depth map', depth_map)
-        # cv2.imshow('side by side', stereo)
-        # cv2.imshow("anaglyph", anaglyph)
-        # cv2.waitKey(0)
+            # cv2.imshow('depth map', depth_map)
+            # cv2.imshow('side by side', stereo)
+            # cv2.imshow("anaglyph", anaglyph)
+            # cv2.waitKey(0)
 
-        cv2.imwrite(os.path.join(output_dir, 'MiDaS_{}.png'.format(sample.split('.')[0])), stereo)
-        cv2.imwrite(os.path.join(output_dir, 'MiDaS_3d_{}.png'.format(sample.split('.')[0])), anaglyph)
+            cv2.imwrite(os.path.join(output_dir, 'MiDaS_{}.png'.format(sample.split('.')[0])), stereo)
+            cv2.imwrite(os.path.join(output_dir, 'MiDaS_3d_{}.png'.format(sample.split('.')[0])), anaglyph)
 
 
 if __name__ == "__main__":
