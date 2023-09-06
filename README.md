@@ -24,9 +24,10 @@ file in the root folder.
 2) Set up dependencies: 
 
     ```shell
-	pip install pytorch  
+	pip install torch  
 	pip install torchvision
 	pip install opencv_python
+    pip install tqdm
 	```
 
    The code was tested with Cuda 10.1, Python 3.6.6, PyTorch 1.6.0, Torchvision 0.7.0 and OpenCV 3.4.0.12.
